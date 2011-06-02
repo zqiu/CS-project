@@ -7,6 +7,10 @@ public class Company {
     int _risk;
 
     public Company() {
+        _numSold = 0;
+        _numStock = 30;
+        _risk = ((int)Math.random()*5);
+        _price = 0;
     }
 
     public double adjustPrice() {
