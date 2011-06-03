@@ -13,6 +13,7 @@ public class Investor {
     Map<Company, Integer> _stocks;
 
     public Investor() {
+
     }
 
     //find list of all the companies with risk < comfidence.
