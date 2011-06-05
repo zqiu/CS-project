@@ -1,5 +1,6 @@
 import java.util.Map;
-
+import java.util.TreeMap;
+import java.util.Random;
 public class Investor {
 
     double _money;
@@ -15,7 +16,7 @@ public class Investor {
     public Investor(Market mar){
         _money = 5000.0;
         _oldmoney = 0;
-        _confidence = _confidence = 43 + random(16);
+        _confidence = _confidence = 43 + Random(16);
         _stockVal = 0;
         _stockValChanged = 0;
         _market = mar;
