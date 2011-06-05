@@ -8,6 +8,5 @@ public class Market {
     //make market organized by risk
     }
 
-    public void getCompanies() {
-    }
+
 }

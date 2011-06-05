@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.ArrayList;
 
 public class Investor {
 
@@ -29,8 +30,7 @@ public class Investor {
         double old = _stockVal;
         _stockVal = 0; 
         for(Company x: _stocks.keySet()){
-            _stockVal = x.getPrice() * _stocks.get(x); 
-            //Need and accessor method in Company that returns the price.
+            _stockVal = x.getPrice() * _stocks.get(x);
         }
         _stockValChanged = _stockVal - old;
          
@@ -49,8 +49,20 @@ public class Investor {
         return _money + _stockVal;
     }
 
-    public void invest() {
-
+    public void invest(){
+        ArrayList comp = _market.getcompanies();
+        for(int i = 0; i < comp.size(); i++){
+            if((comp.get(i).getRisk() < _confidence) 
+                && comp.get(i).getPrice() < _money){
+                if(_stocks.containsKey(comp.get(i)))
+                    _stocks.put(comp.get(i), _stocks.get(comp.get(i)) + 1));
+                else _stocks.put(comp.get(i), 1);
+ 
+               comp.get(i).sell();
+               _money -= comp.get(i).getPrice();
+               break;
+        }
+    }
     }
 
     //sell those stocks with the risk > than confidence
