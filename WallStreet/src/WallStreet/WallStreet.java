@@ -1,3 +1,5 @@
+package WallStreet;
+
 public class WallStreet {
 
     Investor[] _investors;
