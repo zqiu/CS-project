@@ -15,7 +15,7 @@ public class Investor {
     public Investor(Market mar){
         _money = 5000.0;
         _oldmoney = 0;
-        _confidence = _confidence = 43 + random(16);
+        _confidence = 43 + (int)(16*Math.random());
         _stockVal = 0;
         _stockValChanged = 0;
         _market = mar;

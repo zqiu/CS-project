@@ -1,4 +1,3 @@
-
 public class WallStreet {
 
     Investor[] _investors;
