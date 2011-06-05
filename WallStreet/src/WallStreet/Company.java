@@ -1,4 +1,4 @@
-public class Company {
+public class Company{
 
     int _numStock;
     int _numSold;
@@ -9,7 +9,7 @@ public class Company {
         _numSold = 0;
         _numStock = 30;
         _risk = ((int)(Math.random()*50));
-        _price = 50;
+        _price = 50.0;
     }
 
     public double adjustPrice() {
@@ -22,5 +22,8 @@ public class Company {
         }
         return _price;
     }
-
+    
+    public double getPrice(){
+        return _price;
+    }
 }
