@@ -1,9 +1,11 @@
+package WallStreet;
+
 public class Company{
 
-    int _numStock;
-    int _numSold;
-    double _price;
-    int _risk;
+    private int _numStock;
+    private int _numSold;
+    private double _price;
+    private int _risk;
 
     public Company() {
         _numSold = 0;
@@ -25,5 +27,23 @@ public class Company{
     
     public double getPrice(){
         return _price;
+    }
+
+    public int getRisk(){
+        return _risk;
+    }
+
+    public void sell(){
+        _numStock--;
+        _numSold++;
+    }
+    public void gain(){
+        _numStock++;
+        _numSold--;
+    }
+    
+    
+    public int getStock(){
+        return _numStock;
     }
 }
