@@ -33,4 +33,5 @@ public class Market {
     public ArrayList<Company> getCompanies() {
         return _companies;
     }
+    
 }

@@ -42,8 +42,12 @@ public class Company{
         _numSold--;
     }
     
-    
     public int getStock(){
         return _numStock;
+    }
+
+    public String toString(){
+        return "|Price: " + _price + "  |Sold Shares: " 
+               + _numSold + "  |Risk: " + _risk;
     }
 }

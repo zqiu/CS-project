@@ -92,4 +92,19 @@ public class Investor {
     public int getConfidence(){
         return _confidence;
     }
+    
+    public String toString(){
+        String ans = "";
+        ans = "Money: " + _money + "  |Portfolio: " + getPort()
+              + "  |Confidence: " + _confidence;
+        return ans;
+    }
+    
+    //carries out what an investor would do each turn, in order, before invest.
+    public void run(){
+        changeStockVal();
+        resetConfidence();
+       
+    }
+
 }
