@@ -13,7 +13,6 @@ public class WallStreet {
     public WallStreet() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JButton button = new JButton("clicked");
         human = new Human();
         frame.getContentPane().add(human);
         frame.setSize(500, 500);
@@ -31,7 +30,10 @@ public class WallStreet {
 
         public void paintComponent(Graphics g) {
             Image img = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\Human.jpg").getImage();
-            g.drawImage(img, 3, 4, this);
+            Image img2 = img.getScaledInstance(100, 100, 2);
+            img = img2;
+            g.drawImage(img, 0, 0, this);
+            g.drawImage(img2, 0, 100, this);
         }
     }
 
