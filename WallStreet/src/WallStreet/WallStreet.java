@@ -1,7 +1,7 @@
 package WallStreet;
 
+import java.util.Arrays;
 import javax.swing.*;
-
 import java.util.ArrayList;
 
 import java.awt.*;
@@ -16,6 +16,8 @@ public class WallStreet {
     Market _market;
     JFrame frame;
     Human human;
+    JPanel panel;
+    ArrayList<JButton> buttons;
 
     public WallStreet() {
         _investors = new ArrayList<Investor>();
@@ -30,14 +32,32 @@ public class WallStreet {
     private void drawGraphics() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 500);
+        frame.setSize(600, 500);
         human = new Human(10);
-
-        frame.getContentPane().add(human);
+        frame.getContentPane().add(BorderLayout.NORTH,human);
+        panel = new JPanel();
+        panel.setBackground(Color.darkGray);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+        addToPanel();
+        frame.getContentPane().add(BorderLayout.SOUTH,panel);
         frame.setVisible(true);
         _market = new Market();
         _investors = new ArrayList<Investor>();
+    }
 
+    public void addToPanel(){
+        JButton[] temp = new JButton[10];
+        buttons = new ArrayList<JButton>();
+        for(int i = 0; i < temp.length; i++){
+            temp[i] = new JButton(i + ":" + _investors.get(i).toString());
+        }
+        buttons.addAll(Arrays.asList(temp));
+    }
+
+    public void resetPanel(){
+        for(int i = 0; i < buttons.size(); i++){
+            buttons.get(i).setText(i + ":" + _investors.get(i).toString());
+        }
     }
 
     public void shuffle() {
@@ -87,8 +107,10 @@ public class WallStreet {
             if (_investors.get(i).getMoney() <= 0) {
                 _investors.get(i).die();
                 _investors.remove(i);
+                buttons.remove(i);
             }
         }
+        resetPanel();
     }
 
     public void addInvestor(Investor j) {
@@ -112,7 +134,7 @@ public class WallStreet {
             Image[] images = new Image[_numHumans];
             //change this file path on your computer
             Image img = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\Human.jpg").getImage();
-            img = img.getScaledInstance(frame.getWidth() / _numHumans, frame.getHeight() / _numHumans * 2, 2);
+            img = img.getScaledInstance(frame.getWidth() / _numHumans, frame.getHeight() - 100 / _numHumans * 2, 2);
             for (int i = 0; i < images.length; i++) {
                 images[i] = img;
                 g.drawImage(images[i], i * frame.getWidth() / _numHumans, 0, this);
