@@ -1,6 +1,6 @@
 package WallStreet;
 
-public class Company {
+public class Company implements Comparable{
 
     private int _numStock;
     private int _numSold;
@@ -10,7 +10,7 @@ public class Company {
     public Company() {
         _numSold = 0;
         _numStock = 30;
-//        _risk = ((int) (Math.random() * 50));
+        _risk = ((int) (Math.random() * 50));
         _price = 50.0;
     }
 
@@ -48,5 +48,9 @@ public class Company {
     public String toString() {
         return "|Price: " + _price + "  |Sold Shares: "
                 + _numSold + "  |Risk: " + _risk;
+    }
+
+    public int compareTo(Object other){
+        return _risk - ((Company)other).getRisk();
     }
 }

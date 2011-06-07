@@ -4,8 +4,6 @@ import java.util.Arrays;
 import javax.swing.*;
 import java.util.ArrayList;
 import cs1.Keyboard;
-
-
 import java.awt.*;
 
 public class WallStreet {
@@ -38,8 +36,6 @@ public class WallStreet {
         addToPanel();
         frame.getContentPane().add(BorderLayout.SOUTH,panel);
         frame.setVisible(true);
-        _market = new Market();
-        _investors = new ArrayList<Investor>();
     }
 
     public void addToPanel(){
@@ -49,6 +45,9 @@ public class WallStreet {
             temp[i] = new JButton(i + ":" + _investors.get(i).toString());
         }
         buttons.addAll(Arrays.asList(temp));
+        for(int i = 0; i < buttons.size(); i++){
+            panel.add(buttons.get(i));
+        }
     }
 
     public void resetPanel(){

@@ -20,8 +20,8 @@ public class Market {
         int mid = (high + low) / 2;
         if (low >= high) {
             return mid;
-        } else if (_companies.get(mid).getRisk() < company.getRisk()) {
-            return addR(company, mid, high);
+        } else if (_companies.get(mid).getRisk() <= company.getRisk()) {
+            return addR(company, mid + 1, high);
         } else {
             return addR(company, low, mid);
         }
