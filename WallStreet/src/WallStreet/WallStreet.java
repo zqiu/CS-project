@@ -27,14 +27,14 @@ public class WallStreet {
     private void drawGraphics() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 500);
-        human = new Human(10);
-        frame.getContentPane().add(BorderLayout.NORTH,human);
+        frame.setSize(600, 700);
+        human = new Human();
+        frame.getContentPane().add(human);
         panel = new JPanel();
-        panel.setBackground(Color.darkGray);
-        panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+        panel.setBackground(Color.CYAN);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         addToPanel();
-        frame.getContentPane().add(BorderLayout.SOUTH,panel);
+        frame.getContentPane().add(BorderLayout.EAST,panel);
         frame.setVisible(true);
     }
 
@@ -119,15 +119,9 @@ public class WallStreet {
 
     public class Human extends JPanel {
 
-        int _numHumans;
-
-        public Human(int numHumans) {
-            super();
-            _numHumans = numHumans;
-        }
-
         public void paintComponent(Graphics g) {
-            Image[] images = new Image[_numHumans];
+            //this is taking too much memory
+            /*Image[] images = new Image[_numHumans];
             //change this file path on your computer
             Image img = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\Human.jpg").getImage();
             img = img.getScaledInstance(frame.getWidth() / _numHumans, frame.getHeight() - 100 / _numHumans * 2, 2);
@@ -139,6 +133,14 @@ public class WallStreet {
             Image img2 = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\WallStreet.jpg").getImage();
             img2 = img2.getScaledInstance(frame.getWidth() / 2, (int) (frame.getHeight() * (_numHumans - 1.0) / (_numHumans) / 2), 1);
             g.drawImage(img2, frame.getWidth() / 4, 3 * frame.getHeight() / _numHumans, this);
+             *
+             */
+            Image img = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\Human.jpg").getImage();
+            //img = img.getScaledInstance(frame.getWidth()/2, frame.getHeight()/2, 1);
+            g.drawImage(img, 0, 0, this);
+            Image img2 = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\WallStreet.jpg").getImage();
+            //img2 = img2.getScaledInstance(frame.getWidth()/2, frame.getHeight()/2, 1);
+            g.drawImage(img2, 0, frame.getHeight()/2, this);
         }
     }
 
