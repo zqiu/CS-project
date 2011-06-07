@@ -3,9 +3,11 @@ package WallStreet;
 import javax.swing.*;
 
 import java.util.ArrayList;
+
 import java.awt.*;
 
 
+import java.awt.*;
 
 public class WallStreet {
 
@@ -82,7 +84,6 @@ public class WallStreet {
         }
     }
     
-    
 
     public void addInvestor(Investor j) {
         _investors.add(j);
@@ -91,7 +92,6 @@ public class WallStreet {
     public void addCompany(Company k) {
         _market.add(k);
     }
-    
 
     public class Human extends JPanel {
 
@@ -119,7 +119,6 @@ public class WallStreet {
     }
     
     
-
     public static void main(String[] arg) {
         WallStreet test = new WallStreet();
     }

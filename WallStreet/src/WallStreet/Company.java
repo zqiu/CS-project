@@ -1,6 +1,6 @@
 package WallStreet;
 
-public class Company{
+public class Company {
 
     private int _numStock;
     private int _numSold;
@@ -10,7 +10,7 @@ public class Company{
     public Company() {
         _numSold = 0;
         _numStock = 30;
-        _risk = ((int)(Math.random()*50));
+        _risk = ((int) (Math.random() * 50));
         _price = 50.0;
     }
 
@@ -24,28 +24,29 @@ public class Company{
         }
         return _price;
     }
-    
-    public double getPrice(){
+
+    public double getPrice() {
         return _price;
     }
 
-    public int getRisk(){
+    public int getRisk() {
         return _risk;
     }
 
-    public void sell(){
+    public void sell() {
         _numSold++;
     }
-    public void gain(){
+
+    public void gain() {
         _numSold--;
     }
-    
-    public int numLeft(){
+
+    public int numLeft() {
         return _numStock - _numSold;
     }
 
-    public String toString(){
-        return "|Price: " + _price + "  |Sold Shares: " 
-               + _numSold + "  |Risk: " + _risk;
+    public String toString() {
+        return "|Price: " + _price + "  |Sold Shares: "
+                + _numSold + "  |Risk: " + _risk;
     }
 }

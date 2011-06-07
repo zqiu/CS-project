@@ -51,39 +51,39 @@ public class Investor {
         return _money + _stockVal;
     }
 
-    public void invest(){
+    public void invest() {
         _oldmoney = _money; //assuming this goes first.
         for (Company y : _market.getCompanies()) {
             if (y.getRisk() < _confidence && y.numLeft() > 0 && y.getPrice() < _money) {
                 if (_stocks.containsKey(y)) {
                     _stocks.put(y, (_stocks.get(y) + 1));
-                } 
-                else {
+                } else {
                     _stocks.put(y, 1);
                 }
                 y.sell();
                 _money -= y.getPrice();
                 break;
-            } 
-            else _happy = true;
+            } else {
+                _happy = true;
+            }
         }
     }
     //sell those stocks with the risk > than confidence
 
     public void sell() {
         for (Company x : _market.getCompanies()) {
-            if (x.getRisk() > _confidence || x.numLeft() < 3){
-                if (_stocks.get(x) == 1){
+            if (x.getRisk() > _confidence || x.numLeft() < 3) {
+                if (_stocks.get(x) == 1) {
                     _stocks.remove(x);
-                } 
-                else{
+                } else {
                     _stocks.put(x, _stocks.get(x) - 1);
                 }
                 _money += x.getPrice();
                 x.gain();
                 break;
-            } 
-            else _happy = true;   
+            } else {
+                _happy = true;
+            }
         }
     }
 
@@ -121,13 +121,11 @@ public class Investor {
         resetConfidence();
     }
 
-    public void die(){
-        for(Company x: _stocks.keySet()){
-            for(int i = 0; i < _stocks.get(x); i++){
+    public void die() {
+        for (Company x : _stocks.keySet()) {
+            for (int i = 0; i < _stocks.get(x); i++) {
                 x.gain();
             }
         }
     }
-
 }
- 
