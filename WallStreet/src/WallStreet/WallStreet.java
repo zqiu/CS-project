@@ -99,6 +99,7 @@ public class WallStreet {
                 buttons.remove(i);
             }
         }
+        resetPanel();
     }
 
     public void addInvestor(Investor j) {
