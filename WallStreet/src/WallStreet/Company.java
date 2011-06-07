@@ -34,16 +34,14 @@ public class Company{
     }
 
     public void sell(){
-        _numStock--;
         _numSold++;
     }
     public void gain(){
-        _numStock++;
         _numSold--;
     }
     
-    public int getStock(){
-        return _numStock;
+    public int numLeft(){
+        return _numStock - _numSold;
     }
 
     public String toString(){
