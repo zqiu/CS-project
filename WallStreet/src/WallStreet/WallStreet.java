@@ -9,6 +9,7 @@ import java.awt.*;
 public class WallStreet {
 
     ArrayList<Investor> _investors;
+    ArrayList<Investor> _investors2;
     Market _market;
     JFrame frame;
     Human human;
@@ -17,6 +18,7 @@ public class WallStreet {
 
     public WallStreet() {
         _investors = new ArrayList<Investor>();
+        _investors2 = new ArrayList<Investor>();
         _market = new Market();
     }
 
@@ -42,7 +44,7 @@ public class WallStreet {
         JButton[] temp = new JButton[10];
         buttons = new ArrayList<JButton>();
         for(int i = 0; i < temp.length; i++){
-            temp[i] = new JButton(i + ":" + _investors.get(i).toString());
+            temp[i] = new JButton(i + ":" + _investors2.get(i).toString());
         }
         buttons.addAll(Arrays.asList(temp));
         for(int i = 0; i < buttons.size(); i++){
@@ -52,7 +54,7 @@ public class WallStreet {
 
     public void resetPanel(){
         for(int i = 0; i < buttons.size(); i++){
-            buttons.get(i).setText(i + ":" + _investors.get(i).toString());
+            buttons.get(i).setText(i + ":" + _investors2.get(i).toString());
         }
     }
 
@@ -145,6 +147,7 @@ public class WallStreet {
     }
 
     public void business() {
+        _investors2.addAll(_investors);
         drawGraphics();
         while (_investors.size() > 3) {
             go();
@@ -160,6 +163,7 @@ public class WallStreet {
                     System.out.println(y);
                 }
             }
+            else if(w.equals("e"))
             try{
                 Thread.sleep(100);
             }catch(Exception e){

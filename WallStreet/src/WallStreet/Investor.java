@@ -18,7 +18,7 @@ public class Investor {
     boolean _happy;
 
     public Investor(Market mar) {
-        _money = 5000.0;
+        _money = 500.0;
         _oldmoney = 0;
         _confidence = 43 + (int) (16 * Math.random());
         _stockVal = 0;
@@ -71,16 +71,16 @@ public class Investor {
 
     public void sell() {
         for (Company x : _market.getCompanies()) {
-            if (x.getRisk() > _confidence || x.numLeft() < 3) {
-                if (_stocks.get(x) == 1) {
-                    _stocks.remove(x);
-                } else {
-                    _stocks.put(x, _stocks.get(x) - 1);
-                }
-                _money += x.getPrice();
-                x.gain();
-                break;
-            } else {
+            if (x.getRisk() > _confidence || x.numLeft() < 3 || x.getRisk() < _confidence - 15){
+                    if (_stocks.get(x) == 1) {
+                        _stocks.remove(x);
+                    } else {
+                        _stocks.put(x, _stocks.get(x) - 1);
+                    }
+                    _money += x.getPrice();
+                    x.gain();
+                    break;
+                } else  {
                 _happy = true;
             }
         }
@@ -100,7 +100,7 @@ public class Investor {
 
     public String toString() {
         String ans = "";
-        ans = "Money: " + _money + "\n " +  "|Confidence: " + _confidence;
+        ans = "Money: " + (int)_money + "\n " + "|Confidence: " + _confidence;
         return ans;
     }
 

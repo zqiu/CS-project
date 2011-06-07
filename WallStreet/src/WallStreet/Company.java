@@ -9,7 +9,7 @@ public class Company implements Comparable{
 
     public Company() {
         _numSold = 0;
-        _numStock = 30;
+        _numStock = 5;
         _risk = ((int) (Math.random() * 50));
         _price = 50.0;
     }
