@@ -3,8 +3,6 @@ package WallStreet;
 import java.util.Arrays;
 import javax.swing.*;
 import java.util.ArrayList;
-
-import java.awt.*;
 import cs1.Keyboard;
 
 
@@ -22,7 +20,6 @@ public class WallStreet {
     public WallStreet() {
         _investors = new ArrayList<Investor>();
         _market = new Market();
-        drawGraphics();
     }
 
     public Market getMar(){
@@ -147,6 +144,7 @@ public class WallStreet {
     }
 
     public void business() {
+        drawGraphics();
         while (_investors.size() > 3) {
             go();
             System.out.println("i for investors, c for companies, anything else will initiate another turn");
@@ -160,6 +158,10 @@ public class WallStreet {
                 for (Company y : _market.getCompanies()){
                     System.out.println(y);
                 }
+            }
+            try{
+                Thread.sleep(100);
+            }catch(Exception e){
             }
         }
     }
@@ -206,7 +208,6 @@ public class WallStreet {
         test.addInvestor(r);
         test.addInvestor(s);
         test.addInvestor(t);
-        
         test.business();
     }
 }
