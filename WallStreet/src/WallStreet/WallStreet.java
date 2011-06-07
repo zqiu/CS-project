@@ -2,13 +2,9 @@ package WallStreet;
 
 import javax.swing.*;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
-=======
+
 import java.awt.*;
-
-
->>>>>>> e0a126a88e84b64ffecd64b00c42a6877bcd4274
 
 public class WallStreet {
 
@@ -84,9 +80,6 @@ public class WallStreet {
             }
         }
     }
-    
-    <<<<<<< HEAD
-    
 
     public void addInvestor(Investor j) {
         _investors.add(j);
@@ -95,9 +88,7 @@ public class WallStreet {
     public void addCompany(Company k) {
         _market.add(k);
     }
-    
 
-    =======
     public class Human extends JPanel {
 
         int _numHumans;
@@ -122,9 +113,6 @@ public class WallStreet {
             g.drawImage(img2, frame.getWidth() / 4, 3 * frame.getHeight() / _numHumans, this);
         }
     }
-    
-    >>>>>>> e0a126a88e84b64ffecd64b00c42a6877bcd4274
-    
 
     public static void main(String[] arg) {
         WallStreet test = new WallStreet();
