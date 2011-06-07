@@ -42,12 +42,14 @@ public class WallStreet {
 
         public void paintComponent(Graphics g) {
             Image[] images = new Image[_numHumans];
+            //change this file path on your computer
             Image img = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\Human.jpg").getImage();
             img = img.getScaledInstance(frame.getWidth()/_numHumans, frame.getHeight()/_numHumans * 2, 2);
             for(int i = 0; i < images.length; i++){
                 images[i] = img;
                 g.drawImage(images[i], i * frame.getWidth() / _numHumans , 0, this);
             }
+            //change this file path on your computer
             Image img2 = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\WallStreet.jpg").getImage();
             img2 = img2.getScaledInstance(frame.getWidth()/2, (int)(frame.getHeight() * (_numHumans - 1.0)/(_numHumans)/2), 1);
             g.drawImage(img2, frame.getWidth()/4,3*frame.getHeight()/_numHumans, this);
