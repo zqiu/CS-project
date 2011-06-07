@@ -33,7 +33,7 @@ public class Investor {
         double old = _stockVal;
         _stockVal = 0;
         for (Company x : _stocks.keySet()) {
-            _stockVal = x.getPrice() * _stocks.get(x);
+            _stockVal += x.getPrice() * _stocks.get(x);
         }
         _stockValChanged = _stockVal - old;
 

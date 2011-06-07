@@ -2,13 +2,10 @@ package WallStreet;
 
 import javax.swing.*;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
-=======
 import java.awt.*;
 
 
->>>>>>> e0a126a88e84b64ffecd64b00c42a6877bcd4274
 
 public class WallStreet {
 
@@ -85,7 +82,6 @@ public class WallStreet {
         }
     }
     
-    <<<<<<< HEAD
     
 
     public void addInvestor(Investor j) {
@@ -97,7 +93,6 @@ public class WallStreet {
     }
     
 
-    =======
     public class Human extends JPanel {
 
         int _numHumans;
@@ -123,7 +118,6 @@ public class WallStreet {
         }
     }
     
-    >>>>>>> e0a126a88e84b64ffecd64b00c42a6877bcd4274
     
 
     public static void main(String[] arg) {
