@@ -101,8 +101,7 @@ public class Investor {
 
     public String toString() {
         String ans = "";
-        ans = "Money: " + _money + "  |Portfolio: " + getPort()
-                + "  |Confidence: " + _confidence;
+        ans = "Money: " + _money + "  |Confidence: " + _confidence;
         return ans;
     }
 
