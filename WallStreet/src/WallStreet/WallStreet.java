@@ -96,6 +96,7 @@ public class WallStreet {
             if (_investors.get(i).getMoney() <= 0) {
                 _investors.get(i).die();
                 _investors.remove(i);
+                buttons.remove(i);
             }
         }
     }
