@@ -137,10 +137,10 @@ public class WallStreet {
              */
             Image img = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\Human.jpg").getImage();
             //img = img.getScaledInstance(frame.getWidth()/2, frame.getHeight()/2, 1);
-            g.drawImage(img, 0, 0, this);
+            g.drawImage(img, 60, 40, this);
             Image img2 = new ImageIcon("C:\\Users\\English\\Documents\\NetBeansProjects\\CS-project\\WallStreet\\src\\WallStreet\\WallStreet.jpg").getImage();
             //img2 = img2.getScaledInstance(frame.getWidth()/2, frame.getHeight()/2, 1);
-            g.drawImage(img2, 0, frame.getHeight()/2, this);
+            g.drawImage(img2, 50, frame.getHeight()/2, this);
         }
     }
 
